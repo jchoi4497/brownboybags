@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from "vue-router";
-import { computed } from "vue";
+import { computed, watch, nextTick } from "vue";
 import { categories } from "../components/products.js";
 
 const route = useRoute();
@@ -10,11 +10,28 @@ const selectedCategory = computed(() => {
   const cat = route.params.category;
   return cat ? categories.find((c) => c.name === cat) : null;
 });
+
+// built in watch function looks for change
+watch(
+  () => route.params.category,
+  async (newCategory) => {
+    if (newCategory) {
+      // Wait for DOM to update
+      await nextTick();
+
+      // Scroll smoothly to the products section
+      const section = document.getElementById("products-section");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  }
+);
 </script>
 
 <template>
   <div
-    class="p-4 flex flex-col items-center min-h-screen pb-36 overscroll-contain"
+    class="p-4 flex flex-col items-center min-h-screen pb-76 overscroll-contain"
   >
     <!-- Breadcrumbs -->
     <nav
@@ -56,7 +73,7 @@ const selectedCategory = computed(() => {
     </div>
 
     <!-- Show selected category items -->
-    <div v-if="selectedCategory" class="w-full max-w-5xl">
+    <div v-if="selectedCategory" id="products-section" class="w-full max-w-5xl">
       <h1 class="text-xl font-bold mb-3 text-center">
         {{ selectedCategory.name }}
       </h1>

@@ -56,7 +56,7 @@ const product = computed(() => {
         class="w-full h-72 object-contain rounded-2xl mb-4 shadow-lg transform transition hover:scale-105"
       />
       <h1 class="text-2xl font-bold mb-2">{{ product.name }}</h1>
-      <p class="text-gray-500 mb-4">Category: {{ selectedCategory.name }}</p>
+      <p class="text-gray-500 mb-4">Description: {{ product.description }}</p>
     </div>
 
     <div v-else class="text-gray-500 italic text-center">

@@ -39,18 +39,29 @@ const isOpen = ref(false);
       </div>
 
       <!-- Mobile Hamburger Menu Button -->
-      <div class="sm:hidden flex w-full justify-end p-5 mt-20 z-50">
+      <div class="sm:hidden flex w-full justify-end p-5 mt-18 z-50">
         <button
           @click="isOpen = !isOpen"
-          class="relative flex flex-col justify-between h-2 w-5 overflow-visible"
+          class="relative w-6 h-6 flex items-center justify-center"
         >
+          <!-- Top span -->
           <span
-            :class="{ 'rotate-45 translate-y-1': isOpen }"
-            class="block h-0.5 w-full bg-black transition-transform duration-300"
+            :class="[
+              'absolute block h-0.5 w-full bg-black transition-all duration-300',
+              isOpen
+                ? 'rotate-45 translate-y-0' // rotated for X
+                : '-translate-y-1', // initially slightly up
+            ]"
           ></span>
+
+          <!-- Bottom span -->
           <span
-            :class="{ '-rotate-45 -translate-y-1': isOpen }"
-            class="block h-0.5 w-full bg-black transition-transform duration-300"
+            :class="[
+              'absolute block h-0.5 w-full bg-black transition-all duration-300',
+              isOpen
+                ? '-rotate-45 translate-y-0' // rotated for X
+                : 'translate-y-1', // initially slightly down
+            ]"
           ></span>
         </button>
       </div>
