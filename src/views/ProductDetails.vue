@@ -27,7 +27,7 @@ const product = computed(() => {
 </script>
 
 <template>
-  <div class="p-8 max-w-md mx-auto">
+  <div class="p-8 max-w-md mx-auto min-h-screen pb-32 overscroll-contain">
     <!-- Breadcrumbs -->
     <nav class="text-sm mb-6 flex flex-wrap gap-1 text-gray-600">
       <!-- Products main page -->
@@ -53,7 +53,7 @@ const product = computed(() => {
       <img
         :src="product.img"
         :alt="product.name"
-        class="w-full h-72 object-contain rounded mb-4"
+        class="w-full h-72 object-contain rounded-2xl mb-4 shadow-lg transform transition hover:scale-105"
       />
       <h1 class="text-2xl font-bold mb-2">{{ product.name }}</h1>
       <p class="text-gray-500 mb-4">Category: {{ selectedCategory.name }}</p>

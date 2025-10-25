@@ -22,8 +22,8 @@ featuredProducts.splice(6);
 </script>
 
 <template>
-  <div class="p-8">
-    <h1 class="text-4xl font-bold mb-6">Welcome to Brown Boy Bags</h1>
+  <div class="p-8 bg-gray-200 min-h-screen pb-36 overscroll-contain">
+    <h1 class="text-4xl font-bold mb-6 text-center">BrownBoyBags</h1>
     <h1 class="text-4xl font-bold mb-6">Featured Items</h1>
 
     <!-- Grid layout for featured Products -->
@@ -33,7 +33,7 @@ featuredProducts.splice(6);
         v-for="(featuredProduct, i) in featuredProducts"
         :key="i"
         :to="`/products/${featuredProduct.category}/${featuredProduct.product.id}`"
-        class="border p-4 rounded hover:shadow-lg"
+        class="p-4 rounded-2xl shadow-lg transform transition hover:scale-105"
       >
         <img
           :src="featuredProduct.product.img"

@@ -13,7 +13,9 @@ const selectedCategory = computed(() => {
 </script>
 
 <template>
-  <div class="p-4 flex flex-col items-center">
+  <div
+    class="p-4 flex flex-col items-center min-h-screen pb-36 overscroll-contain"
+  >
     <!-- Breadcrumbs -->
     <nav
       class="text-sm mb-4 flex flex-wrap gap-1 text-gray-600 w-full max-w-5xl"
@@ -35,7 +37,7 @@ const selectedCategory = computed(() => {
           v-for="category in categories"
           :key="category.id"
           :to="`/products/${category.name}`"
-          class="px-3 py-1 border rounded-lg bg-gray-100 hover:bg-gray-200 cursor-pointer hover:bg-green-100 transition flex flex-col items-center"
+          class="px-3 py-1 border rounded-lg bg-gray-100 hover:bg-gray-200 cursor-pointer hover:bg-green-100 transition flex flex-col items-center shadow-lg transform hover:scale-105"
           :class="{
             'bg-green-200 border-green-400':
               route.params.category === category.name,
@@ -63,7 +65,7 @@ const selectedCategory = computed(() => {
           v-for="product in selectedCategory.products"
           :key="selectedCategory.id + '-' + product.id + '-' + product.name"
           :to="`/products/${selectedCategory.name}/${product.id}`"
-          class="w-44 h-56 border p-3 rounded-lg hover:shadow-md flex flex-col items-center bg-white"
+          class="w-44 h-56 border p-3 rounded-lg shadow-lg flex flex-col items-center bg-white transition transform hover:scale-105"
         >
           <div class="w-36 h-36 flex items-center justify-center mb-2">
             <img
