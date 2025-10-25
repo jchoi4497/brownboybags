@@ -11,14 +11,22 @@ import HeroLogo from "./components/HeroLogo.vue";
     <HeroLogo />
 
     <nav
-      class="bg-gray-800 text-white py-14 px-8 flex justify-end gap-6 items-center relative z-10"
+      class="bg-gray-200 border-b border-gray-300 text-black h-32 flex justify-end relative z-10"
     >
-      <router-link to="/products" class="transition transform hover:scale-105"
-        >Products</router-link
-      >
-      <router-link to="/about" class="transition transform hover:scale-105"
-        >About</router-link
-      >
+      <div class="flex mt-20 gap-6 px-20">
+        <router-link to="/" class="transition transform hover:scale-105"
+          >Home</router-link
+        >
+        <router-link to="/products" class="transition transform hover:scale-105"
+          >Products</router-link
+        >
+        <router-link to="/about" class="transition transform hover:scale-105"
+          >About</router-link
+        >
+        <router-link to="/contact" class="transition transform hover:scale-105"
+          >Contact</router-link
+        >
+      </div>
     </nav>
     <router-view />
   </div>

@@ -37,7 +37,7 @@ const selectedCategory = computed(() => {
           v-for="category in categories"
           :key="category.id"
           :to="`/products/${category.name}`"
-          class="px-3 py-1 border rounded-lg bg-gray-100 hover:bg-gray-200 cursor-pointer hover:bg-green-100 transition flex flex-col items-center shadow-lg transform hover:scale-105"
+          class="px-3 py-1 border rounded-lg bg-gray-200 hover:bg-gray-200 cursor-pointer hover:bg-green-100 transition flex flex-col items-center shadow-lg transform hover:scale-105"
           :class="{
             'bg-green-200 border-green-400':
               route.params.category === category.name,
