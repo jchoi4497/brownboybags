@@ -39,7 +39,7 @@ const isOpen = ref(false);
       </div>
 
       <!-- Mobile Hamburger Menu Button -->
-      <div class="sm:hidden flex w-full justify-end p-4 mt-20 z-50">
+      <div class="sm:hidden flex w-full justify-end p-5 mt-20 z-50">
         <button
           @click="isOpen = !isOpen"
           class="relative flex flex-col justify-between h-2 w-5 overflow-visible"
@@ -56,40 +56,28 @@ const isOpen = ref(false);
       </div>
 
       <!-- Mobile Menu -->
-      <div
-        v-if="isOpen"
-        class="fixed inset-0 bg-white z-40 flex flex-col items-center justify-start pt-40 gap-8 text-2xl font-medium transition-all duration-500 ease-out"
-        :class="
-          isOpen
-            ? 'opacity-100 translate-y-0'
-            : 'opacity-0 -translate-y-10 pointer-events-none'
-        "
+      <transition
+        enter-active-class="transition-all duration-500 ease-out"
+        enter-from-class="opacity-0 -translate-y-10"
+        enter-to-class="opacity-100 translate-y-0"
+        leave-active-class="transition-all duration-500 ease-in"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-10"
       >
-        <router-link
-          to="/"
-          class="px-4 py-2 hover:bg-gray-100"
-          @click="isOpen = false"
-          >Home</router-link
+        <div
+          v-if="isOpen"
+          class="fixed left-0 right-0 top-32 z-40 h-[calc(100vh-8rem)] bg-gray-200 flex flex-col items-center pt-8 gap-8 text-2xl font-medium"
         >
-        <router-link
-          to="/products"
-          class="px-4 py-2 hover:bg-gray-100"
-          @click="isOpen = false"
-          >Products</router-link
-        >
-        <router-link
-          to="/about"
-          class="px-4 py-2 hover:bg-gray-100"
-          @click="isOpen = false"
-          >About</router-link
-        >
-        <router-link
-          to="/contact"
-          class="px-4 py-2 hover:bg-gray-100"
-          @click="isOpen = false"
-          >Contact</router-link
-        >
-      </div>
+          <router-link @click="isOpen = false" to="/">Home</router-link>
+          <router-link @click="isOpen = false" to="/products"
+            >Products</router-link
+          >
+          <router-link @click="isOpen = false" to="/about">About</router-link>
+          <router-link @click="isOpen = false" to="/contact"
+            >Contact</router-link
+          >
+        </div>
+      </transition>
     </nav>
     <router-view />
   </div>

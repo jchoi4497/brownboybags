@@ -37,7 +37,7 @@ const selectedCategory = computed(() => {
           v-for="category in categories"
           :key="category.id"
           :to="`/products/${category.name}`"
-          class="px-3 py-1 border rounded-lg bg-gray-200 hover:bg-gray-200 cursor-pointer hover:bg-green-100 transition flex flex-col items-center shadow-lg transform hover:scale-105"
+          class="px-3 py-1 rounded-lg bg-gray-200 hover:bg-gray-200 cursor-pointer hover:bg-green-100 transition flex flex-col items-center shadow-xl transform hover:scale-105"
           :class="{
             'bg-green-200 border-green-400':
               route.params.category === category.name,
@@ -65,7 +65,7 @@ const selectedCategory = computed(() => {
           v-for="product in selectedCategory.products"
           :key="selectedCategory.id + '-' + product.id + '-' + product.name"
           :to="`/products/${selectedCategory.name}/${product.id}`"
-          class="w-44 h-56 border p-3 rounded-lg shadow-lg flex flex-col items-center bg-white transition transform hover:scale-105"
+          class="w-44 h-56 p-3 rounded-lg shadow-xl flex flex-col items-center bg-white transition transform hover:scale-105"
         >
           <div class="w-36 h-36 flex items-center justify-center mb-2">
             <img
