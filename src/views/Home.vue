@@ -22,7 +22,7 @@ featuredProducts.splice(6);
 </script>
 
 <template>
-  <div class="p-8 bg-white min-h-screen pb-36 overscroll-contain">
+  <div class="p-8 bg-gray-200 min-h-screen pb-36 overscroll-contain">
     <h1 class="text-4xl font-bold mb-6">Featured Items</h1>
 
     <!-- Grid layout for featured Products -->

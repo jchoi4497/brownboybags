@@ -1,6 +1,6 @@
 <template>
   <!-- Outer div just for positioning, not clickable -->
-  <div class="absolute top-4 left-10 z-20">
+  <div class="absolute top-4 left-10 z-60">
     <!-- Router-link wraps only the image -->
     <router-link to="/">
       <img
