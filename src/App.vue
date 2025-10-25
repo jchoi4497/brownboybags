@@ -11,7 +11,7 @@ import HeroLogo from "./components/HeroLogo.vue";
     <HeroLogo />
 
     <nav
-      class="bg-gray-800 text-white py-6 px-8 flex gap-6 items-center relative z-10"
+      class="bg-gray-800 text-white py-14 px-8 flex justify-end gap-6 items-center relative z-10"
     >
       <router-link to="/products" class="transition transform hover:scale-105"
         >Products</router-link
