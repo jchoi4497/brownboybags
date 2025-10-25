@@ -8,7 +8,10 @@ const isOpen = ref(false);
 </script>
 
 <template>
-  <div class="relative min-h-screen overflow-visible">
+  <div
+    class="relative min-h-screen overflow-x-hidden"
+    :class="{ 'overflow-hidden h-screen': isOpen }"
+  >
     <!-- Age Verification Gateway Modal -->
     <AgeVerification />
 
@@ -36,7 +39,7 @@ const isOpen = ref(false);
       </div>
 
       <!-- Mobile Hamburger Menu Button -->
-      <div class="sm:hidden flex w-full justify-end p-4 z-50">
+      <div class="sm:hidden flex w-full justify-end p-4 mt-20 z-50">
         <button
           @click="isOpen = !isOpen"
           class="relative flex flex-col justify-between h-2 w-5 overflow-visible"
