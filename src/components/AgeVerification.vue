@@ -49,7 +49,7 @@ function verifyAge(confirmed) {
   <!-- Only shows if showModal is true -->
   <div
     v-if="showModal"
-    class="fixed inset-0 flex items-center justify-center bg-black/80 z-50"
+    class="fixed inset-0 flex items-center justify-center bg-black/80 z-[9999]"
   >
     <!-- Modal Box -->
     <div class="bg-white rounded-2xl p-8 text-center max-w-md mx-auto">
